@@ -1,0 +1,28 @@
+# Resource pack (you host it yourself). Leave url empty to disable auto-send.
+resource-pack:
+  url: ""
+  sha1: ""          # sha1 of the zip, hex (e.g. from `sha1sum cicada-pack.zip`)
+  force: false
+  prompt: "Resource pack with the cicada model and sound"
+
+sound:
+  name: "cicada:loop"     # sound event from the pack's sounds.json
+  range: 16.0             # blocks
+  loop-ticks: 60          # length of the sound file in ticks (3.0 s = 60)
+
+model:
+  item-model: "cicada:cicada"   # items/cicada.json in the pack
+  scale: 1.0
+  y-offset: 0.5                 # display is lifted by this * scale so the model sits on the ground
+
+item:
+  name: "&aЦикада"
+
+spawn:
+  enabled: true
+  chance: 0.2                   # 0.2 = about 1 chunk out of 5
+  worlds: ["world"]             # overworld(s) only
+  # true  = every chunk is rolled once, ever (keeps the real 1-in-5 ratio)
+  # false = rolled on EVERY chunk load (cicadas slowly fill the whole world!)
+  roll-once-per-chunk: true
+  delay-ticks: 20
